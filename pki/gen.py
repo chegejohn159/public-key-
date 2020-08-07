@@ -8,17 +8,17 @@ def generateKey(keySize):
 	q = 0
 	print('Generating p prime...')
 	while p == q:
-		p = jc.generateLargePrime(keySize)
-		q = jc.generateLargePrime(keySize)
+		p = genprim.generateLargePrime(keySize)
+		q = genprim.generateLargePrime(keySize)
 	n = p * q
 	print('Generating e that is relatively prime to (p-1)*(q-1)...')
 
 	while True:
 		e = random.randrange(2 ** (keySize - 1), 2 ** (keySize))
-		if kc.gcd(e, (p - 1) * (q - 1)) == 1:
+		if modinv.gcd(e, (p - 1) * (q - 1)) == 1:
 			break
 	print('Calculating d that is mod inverse of e...')
-	d = kc.findModInverse(e, (p - 1) * (q - 1))
+	d = modinv.findModInverse(e, (p - 1) * (q - 1))
 	publicKey = (n, e)
 	privateKey = (n, d)
 	print('Public key:', publicKey)
