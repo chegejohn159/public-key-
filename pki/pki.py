@@ -4,7 +4,7 @@ SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 /*()_-
 def main():
 
 	filename = 'encrypted_file.txt' # The file to write to/read from.
-	mode = 'decrypt' # Set to either 'encrypt' or 'decrypt'.
+	mode = 'encrypt' # Set to either 'encrypt' or 'decrypt'.
 	if mode == 'encrypt':
 		message = 'Journalists belong in the gutter: because that is wherethe ruling classes throw their guilty secrets. Gerald Priestland.The Founding Fathers gave the free press the protection it musthave to bare the secrets of government and inform the people.Hugo Black.'
 		pubKeyFilename = 'al_sweigart_pubkey.txt'
